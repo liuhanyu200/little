@@ -1,7 +1,5 @@
 ﻿#&nbsp;&nbsp;如何同步一个Git远端仓库到本地
-
 ------
-
 > * 创建一个Github账号
 > * 登陆Github，查看远端仓库ssh地址复制下来
 ```
@@ -9,7 +7,6 @@ git@github.com:ab233/cd.git
 ```
 > * 本地建一个和远端仓库同名的文件夹（cd）
 > * 进入文件夹创建git环境
-
 ```
 git bash here
 git init
@@ -39,7 +36,7 @@ git bash here
 /* 查看本地仓库信息 */
 git status
 /* 添加要同步的文件信息 */
-git add 路径+被修改的文件（上面status可以看到详细信息）
+git add 被修改的文件（上面status可以看到详细信息）
 /* 提交到本地版本库 */
 git commit -m "本次修改说明"
 git push origin master /* 推到远端仓库 */
