@@ -1,6 +1,7 @@
 ﻿#基于Apache，php和sqlite在CI框架下的网站
 
 [上一篇，Git同步仓库操作，欢迎大家访问哟 -。 -][1]
+[原文地址][2]
 
 > * 1.把连接数据库模块封装为一个独立的类
 ```
@@ -141,8 +142,9 @@ xmlhttp.open("GET","/server/index.php/login/check_user?q="+str,true);
 // 引入外部js 插在尾部
 <script src="/server/js/main.js"></script>
 ```
-[下一篇，如何在CI框架下封装自己的数据集合？][2]
+[下一篇，如何在CI框架下封装自己的数据集合？][3]
 
 
   [1]: https://www.zybuluo.com/klci/note/430070
-  [2]: http://www.baidu.com
+  [2]: https://www.zybuluo.com/klci/note/430232
+  [3]: http://www.baidu.com
