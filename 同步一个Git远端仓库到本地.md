@@ -1,4 +1,8 @@
-﻿#&nbsp;&nbsp;如何同步一个Git远端仓库到本地
+﻿#  如何同步一个Git远端仓库到本地
+
+[欢迎访问我的Github,里面有md的原文供下载][1]
+
+[本文的地址][2]
 
 > * 创建一个Github账号
 > * 登陆Github，查看远端仓库ssh地址复制下来
@@ -41,3 +45,10 @@ git add 被修改的文件（上面status可以看到详细信息）
 git commit -m "本次修改说明"
 git push origin master /* 推到远端仓库 */
 ```
+
+[下一篇，基于CI框架下的php,sqlite相关内容][3]
+
+
+  [1]: https://github.com/ab233/little
+  [2]: https://www.zybuluo.com/klci/note/430070
+  [3]: https://www.zybuluo.com/klci/note/430232
