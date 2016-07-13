@@ -4,6 +4,8 @@
 
 [本文的地址][2]
 
+标签： Git
+
 > * 创建一个Github账号
 > * 登陆Github，查看远端仓库ssh地址复制下来
 ```
@@ -45,10 +47,24 @@ git add 被修改的文件（上面status可以看到详细信息）
 git commit -m "本次修改说明"
 git push origin master /* 推到远端仓库 */
 ```
+###改名了该怎么办：
+可以参考这篇文章[Changing a remote's URL][3]
+```
+// 其实很简单
+// 1 查看当前仓库走向
+git remote -v (下面是输出)
+origin  git@github.com:OLDUSERNAME/REPOSITORY.git (fetch)
+origin  git@github.com:OLDUSERNAME/REPOSITORY.git (push)
 
-[下一篇，基于CI框架下的php,sqlite相关内容][3]
+// 2 换地址
+git remote set-url origin https://github.com/NEWUSERNAME/OTHERREPOSITORY.git
+
+// 3 OK 了
+```
+[下一篇，基于CI框架下的php,sqlite相关内容][4]
 
 
   [1]: https://github.com/ab233/little
   [2]: https://www.zybuluo.com/klci/note/430070
-  [3]: https://www.zybuluo.com/klci/note/430232
+  [3]: https://help.github.com/articles/changing-a-remote-s-url/
+  [4]: https://www.zybuluo.com/klci/note/430232
