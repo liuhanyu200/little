@@ -1,8 +1,12 @@
 ﻿#基于Apache，php和sqlite在CI框架下的网站
 
-[上一篇，Git同步仓库操作，欢迎大家访问哟 -。 -][1]
+[欢迎访问我的Github，资料都在里面哟！][1]
 
-[原文地址][2]
+[上一篇，Git同步仓库操作，欢迎大家访问哟 -。 -][2]
+
+[原文地址][3]
+
+标签：PHP  SQLite  CI
 
 > * 1.把连接数据库模块封装为一个独立的类
 ```
@@ -30,7 +34,7 @@ $sql = <<<EOF
 select * from user where username = $username;
 EOF;
 ```
->> * 查询到多个数据怎么获取呢？
+> * 查询到多个数据怎么获取呢？
 ```
 $this->load->library('sqlite');
 $test = new Sqlite();
@@ -143,9 +147,48 @@ xmlhttp.open("GET","/server/index.php/login/check_user?q="+str,true);
 // 引入外部js 插在尾部
 <script src="/server/js/main.js"></script>
 ```
-[下一篇，如何在CI框架下封装自己的数据集合？][3]
+> * 路由引发的思考
+CI框架里面的页面切换方法：
+```
+<a href="/server/index.php/login/turn_to_register"></a> //view(a标签路由访问)
+function turn_to_register()
+{   
+    //controller(视图切换)
+    $this->load->view('server/register_view');
+}
+```
+> * 如何消除`php`的`udefined`错误警告：
+可以看看[这篇帖子][4]
+```
+// 下面都可以解决
+if(isset($test)) {//输出}
+if(empty($test)) {//输出}
+if(is_null($test)) {//输出}
+```
+
+> * `php`登陆注销页面之间的逻辑怎么写？
+登陆的时候和注销的时候出了点问题
+假设：
+登陆成功后的页面为 1
+注销成功后的页面为 2
+其他页面为3...
+接下来 我在3... 注销页面 --- 刷新1 后--- 再刷新3...--- 3...又登陆了
+然后如果我刷新2---再去刷新3的话---3又注销了
+也就是说，1,2两个`页面刷新`会`重复请求`，1是请求登陆，添加session
+2是请求注销，删除session
+```
+//解决办法很简单凡是有请求的页面都加一个重定向
+// 详细见CI的辅助函数
+redirect('//相对url');
+
+```
 
 
-  [1]: https://www.zybuluo.com/klci/note/430070
-  [2]: https://www.zybuluo.com/klci/note/430232
-  [3]: http://www.baidu.com
+[下一篇，如何在CI框架下封装自己的数据集合？][5]
+
+
+  [1]: https://github.com/ab233/little
+  [2]: https://www.zybuluo.com/klci/note/430070
+  [3]: https://www.zybuluo.com/klci/note/430232
+  [4]: http://www.jb51.net/article/25032.htm
+  [5]: http://www.baidu.com
