@@ -4,6 +4,9 @@
 
 ---
 
+[原文地址][1]
+[欢迎访问我的Github地址][2]
+
 ### 安装centOS到虚拟机
 
 ---
@@ -35,7 +38,7 @@ yum update
 ```
 yum install httpd // 在centOS7下Apache叫httpd
 ```
-> * 7.安装php全家桶([点这里][1])
+> * 7.安装php全家桶([点这里][3])
 ```
 rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
@@ -103,4 +106,8 @@ ESC进入命令模式，输入 /+查找内容  回车 n 查找下一个
 yum list installed | grep php
 chmod 777 文件名  // 给予最高权限
 ```
-  [1]: http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html
+
+
+  [1]: https://www.zybuluo.com/klci/note/436661
+  [2]: https://github.com/liuhanyu200
+  [3]: http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html
