@@ -55,14 +55,11 @@ git push origin master /* 推到远端仓库 */
 git remote -v (下面是输出)
 origin  git@github.com:OLDUSERNAME/REPOSITORY.git (fetch)
 origin  git@github.com:OLDUSERNAME/REPOSITORY.git (push)
-
 // 2 换地址
 git remote set-url origin https://github.com/NEWUSERNAME/OTHERREPOSITORY.git
-
 // 3 OK 了
 ```
 ### Github加载慢怎么办
-
 ```
 // 这个时候就得用到之前的 remote 连接方式了
 // 一个仓库的换，两种方式在不同的网下加载速度不一样哟
