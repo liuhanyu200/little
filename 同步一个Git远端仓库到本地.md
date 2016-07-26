@@ -1,4 +1,4 @@
-﻿#  如何同步一个Git远端仓库到本地
+#  如何同步一个Git远端仓库到本地
 
 [欢迎访问我的Github,里面有md的原文供下载][1]
 
@@ -61,10 +61,21 @@ git remote set-url origin https://github.com/NEWUSERNAME/OTHERREPOSITORY.git
 
 // 3 OK 了
 ```
+### Github加载慢怎么办
+
+```
+// 这个时候就得用到之前的 remote 连接方式了
+// 一个仓库的换，两种方式在不同的网下加载速度不一样哟
+git remote add origin https://github.com/liuhanyu200/JavaScript.git
+git remote add origin git@github.com:liuhanyu200/JavaScript.git
+```
+
+
+
 [下一篇，基于CI框架下的php,sqlite相关内容][4]
 
 
-  [1]: https://github.com/ab233/little
-  [2]: https://www.zybuluo.com/klci/note/430070
-  [3]: https://help.github.com/articles/changing-a-remote-s-url/
-  [4]: https://www.zybuluo.com/klci/note/430232
+[1]: https://github.com/ab233/little
+[2]: https://www.zybuluo.com/klci/note/430070
+[3]: https://help.github.com/articles/changing-a-remote-s-url/
+[4]: https://www.zybuluo.com/klci/note/430232
