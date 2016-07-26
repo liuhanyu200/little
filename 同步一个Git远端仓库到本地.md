@@ -65,6 +65,11 @@ git remote set-url origin https://github.com/NEWUSERNAME/OTHERREPOSITORY.git
 // 一个仓库的换，两种方式在不同的网下加载速度不一样哟
 git remote add origin https://github.com/liuhanyu200/JavaScript.git
 git remote add origin git@github.com:liuhanyu200/JavaScript.git
+//如何切换连接方式呢？进入config直接修改
+cd .git
+vim config
+// 没有vim怎么办？
+//直接文件夹选项--显示隐藏文件--进去修改
 ```
 
 
