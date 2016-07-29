@@ -67,6 +67,32 @@ EOT;
 
 任何具有string表达式的标量变量，数组单元或对象属性都可以使用此语法。只需简单的像在string以外的地方写出表达式，然后用花括号{和}把它括起来即可。
 
+> foreach
+
+```php
+foreach (array_exception as $value)
+  	statement
+foreach (array_exception as $key => $value)
+  	statement
+```
+
+当`foreach`开始执行时，数组内部的指针会自动指向第一个单元，这意味着不需要在`foreach`循环之前调用reset()。
+
+```php
+<?php
+$arr = array(1, 2, 3, 4);
+// 可以很容易地通过在$value之前加上&来修改数组元素
+// 此方法将以引用赋值而不是拷贝一个值
+foreach ($arr as &$value) {
+  	$value = $value * 2;
+}
+unset($value); // 取消引用
+```
+
+> arrary_key_exists()
+
+`array_key_exists`——检查给定的键名或索引是否存在于数组中，存在返回TRUE，失败返回FALSE。`key`可以是任何能作为数组索引的值。`array_key_exists()`也可以用于对象。可以接收`array`
+
 > 
 
 
