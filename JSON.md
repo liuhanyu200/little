@@ -1,20 +1,25 @@
-﻿# JSON
-
-标签（空格分隔）： JSON JavaScript PHP
-
----
+# JSON
 
 本文的[大多内容来源于这][1]篇文章。
 
 [我的Github][2]，欢迎访问！
 
-关于json,需要理解的是，它只是一种数据格式，不是一种编程语言。很多编程语言都有针对JSON的解析器和序列化器。
+
+
+> 关于json,需要理解的是，它只是一种数据格式，不是一种编程语言。很多编程语言都有针对JSON的解析器和序列化器。
+
+
 
 ##javascript中的JSON
+
+
 `注意：`
+
 > json中可以表示字符串，数值，null。但不支持JavaScript中的undefined，NaN，Infinity，-Infinity和undefined
 > json对象的键名必须放在双引号里面，不能使用单引号
 > 数组或对象最后一个成员的后面，不能加逗号
+
+
 
 `合格的JSON值：`
 ```javascript
@@ -26,7 +31,10 @@
 
 [ { "name": "张三"}, {"name": "李四"} ]
 ```
+
+
 `不合格的JSON值：`
+
 ```javascript
 { name: "张三", 'age': 32 }  // 属性名必须使用双引号
 
@@ -41,10 +49,17 @@
   }
 } // 不能使用函数和日期对象
 ```
+
+
 > * 需要注意的是，空数组和空对象都是合格的JSON值，null本身也是一个合格的JSON值。
 
+
+
 `JSON.stringify()`
+
+
 该方法用于将一个值序列化为JSON字符串，该值可以被JSON.parse()还原
+
 ```javascript
 JSON.stringify('abc') // ""abc""
 JSON.stringify(1) // "1"
@@ -84,8 +99,15 @@ Object.defineProperties(obj, {
 JSON.stringify(obj); // {"foo":1}
 ```
 
+
+
 `JSON.parse()`
+
+
 该方法用于将JSON字符串解析为JavaScript数组
+
+
+
 ```javascript
 JSON.parse('{}') // {}
 JSON.parse('true') // true
@@ -110,9 +132,19 @@ var o = JSON.parse('{"a":1,"b":2}', f);
 o.a // 11
 o.b // undefined
 ```
+
+
 ##php中的JSON
+
+
+
 `json_decode()`
+
+
 对 JSON 格式的字符串进行解码，只能处理utf-8格式的字符串
+
+
+
 ```php
 <?php
 $arr = array ('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5);
@@ -120,7 +152,10 @@ echo json_encode($arr);
 // {"a":1,"b":2,"c":3,"d":4,"e":5}
 ?>
 ```
-`json_encode`
+
+
+`json_encode`    对变量进行JSON编码
+
 ```php
 <?php
 $json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
@@ -148,5 +183,5 @@ array(5) {
 ```
 
 
-  [1]: http://javascript.ruanyifeng.com/stdlib/json.html
-  [2]: https://github.com/liuhanyu200
+[1]: http://javascript.ruanyifeng.com/stdlib/json.html
+[2]: https://github.com/liuhanyu200
