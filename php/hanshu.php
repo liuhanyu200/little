@@ -75,7 +75,34 @@ function __construct()
     //
 }
 
+function xmlrpc_call($method, $request_args = array(), $fails = '', $timeout = '', $logdata = TRUE)
+{
+    $request = array();
+    if ($logdata === TRUE)
+    {
+        $request[] = array($this->comm_mdl->log_data(), 'array');
+    }
 
+     for ($i = 0, $n = count($request_args); $i < $n; $i ++)
+     {
+         $request[] = $request_args[$i];
+     }
+
+    $this->xmlrpc->server(config_item('xmlrpc_server'), config_item('xmlrpc_port'));
+    if ($timeout !== '')
+    {
+        $this->xmlrpc->socket_timeout($timeout);
+    }
+    $this->xmlrpc->method($method);
+    $this->xmlrpc->request($request);
+    if (!$this->xmlrpc->send_request())
+    {
+//        return $fail_res;
+        echo $this->xmlrpc->display_error();
+    }
+    $res = $this->xmlrpc->display_response();
+    return $res;
+}
 
 
 
